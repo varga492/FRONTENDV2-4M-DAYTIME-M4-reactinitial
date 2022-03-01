@@ -55,12 +55,66 @@ export function makeServer({ environment = 'development' } = {}) {
         return { done: true }
       })
 
+      this.get('/series/howimetyourmother', (schema, request) => {
+        return [
+            { name: "Ted Mosby", details: "He is the main protagonist of the series..."},
+            { name: "Barney Stinson", details: "He is best friend of the protagonist..."},
+            { name: "Marshall Eriksen", details: "He is also the best friend of the protagonist..."},
+          ]
+      })
+
+      this.post('/series/newsletter', (schema, request) => {
+        return { done: true }
+      })
+
       this.get('/laptop', (schema, request) => {
         return [
           { brand: "Apple", name: "MacBook Air", weigth: 0.5 },
           { brand: "Asus", name: "P30", weigth: 1.7 },
           { brand: "Lenovo", name: "A50", weigth: 1.5 },
         ]
+      })
+
+      this.get('/teams', (schema, request) => {
+        return [
+          {
+            "name": "Los Angeles Lakers",
+            "stadium": "Staples Center",
+            "franchisePlayers": [
+              { "id": 1, "name": "Lebron James"},
+              { "id": 2, "name": "Anthony Davis"}
+            ]
+          },
+          {
+            "name": "Los Angeles Clippers",
+            "stadium": "Staples Center",
+            "franchisePlayers": [
+              { "id": 3, "name": "Kawhi Leonard"},
+              { "id": 4, "name": "Paul George"}
+            ]
+          },
+          {
+            "name": "Phoenix Suns",
+            "stadium": "Phoenix Suns Arena",
+            "franchisePlayers": [
+              { "id": 5, "name": "Chris Paul"},
+              { "id": 6, "name": "Devin Booker"}
+            ]
+          },
+          {
+            "name": "Brooklyn Nets",
+            "stadium": "Barclays Center",
+            "franchisePlayers": [
+              { "id": 7, "name": "James Harden"},
+              { "id": 8, "name": "Kevin Durant"},
+              { "id": 9, "name": "Kyrie Irving"}
+            ]
+          },
+        ]
+      })
+
+      this.post('/vote', (schema, request) => {
+        return { success: true }
       })
 
       this.get('/vet/clients', (schema, request) => {
