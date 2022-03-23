@@ -55,6 +55,39 @@ export function makeServer({ environment = 'development' } = {}) {
         return { done: true }
       })
 
+      this.get('/api/clothes', (schema, request) => {
+        return [
+            {
+              "type": "T-shirts",
+              "gender": "male",
+              "products": [
+                { "id": 1, "brand": "Nike", "color": "red" },
+                { "id": 2, "brand": "Adidas", "color": "green" }
+              ]
+            },
+            {
+              "type": "Jeans",
+              "gender": "female",
+              "products": [
+                { "id": 3, "brand": "Puma", "color": "blue" },
+                { "id": 4, "brand": "Adidas", "color": "yellow" }
+              ]
+            },
+            {
+              "type": "Shoes",
+              "gender": "male",
+              "products": [
+                { "id": 5, "brand": "Nike", "color": "black" },
+                { "id": 6, "brand": "Puma", "color": "white" }
+              ]
+            }
+          ]
+      })
+
+      this.post('/api/cart', (schema, request) => {
+        return { done: true }
+      })
+
       this.get('/series/howimetyourmother', (schema, request) => {
         return [
             { name: "Ted Mosby", details: "He is the main protagonist of the series..."},
