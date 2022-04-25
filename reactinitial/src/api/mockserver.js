@@ -55,7 +55,7 @@ export function makeServer({ environment = 'development' } = {}) {
         return { done: true }
       })
 
-      this.get('/api/clothes', (schema, request) => {
+      this.get('/clothes', (schema, request) => {
         return [
             {
               "type": "T-shirts",
@@ -84,8 +84,28 @@ export function makeServer({ environment = 'development' } = {}) {
           ]
       })
 
-      this.post('/api/cart', (schema, request) => {
+      this.post('/cart', (schema, request) => {
         return { done: true }
+      })
+
+      this.post('/calculate', (schema, request) => {
+        return [
+          {
+            "name": "Yoda",
+            "type": "Jedi",
+            "chance": "70%"
+          },
+          {
+            "name": "Darth Vader",
+            "type": "Sith",
+            "chance": "10%"
+          }, 
+          {
+            "name": "Luke Skywalker",
+            "type": "Jedi",
+            "chance": "80%"
+          },       
+        ]
       })
 
       this.get('/series/howimetyourmother', (schema, request) => {
