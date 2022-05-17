@@ -122,9 +122,9 @@ export function makeServer({ environment = 'development' } = {}) {
 
       this.get('/laptop', (schema, request) => {
         return [
-          { brand: "Apple", name: "MacBook Air", weigth: 0.5 },
-          { brand: "Asus", name: "P30", weigth: 1.7 },
-          { brand: "Lenovo", name: "A50", weigth: 1.5 },
+          { brand: "Apple", name: "MacBook Air", weight: 0.5 },
+          { brand: "Asus", name: "P30", weight: 1.7 },
+          { brand: "Lenovo", name: "A50", weight: 1.5 },
         ]
       })
 
