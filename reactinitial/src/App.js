@@ -21,8 +21,10 @@ const App = () => {
 
   const filtering = (f) => {
     setFilterData(
-      fetchData.filter((element) =>
-        element.name.toLowerCase().includes(f.toLowerCase())
+      fetchData.filter(
+        (element) =>
+          element.name.toLowerCase().includes(f.toLowerCase()) ||
+          element.brand.toLowerCase().includes(f.toLowerCase())
       )
     );
   };
