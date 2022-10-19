@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from "@mui/material/Button";
 
 function Laptop({laptopName, laptopBrand, laptopWeight}) {
 
@@ -13,7 +14,7 @@ function Laptop({laptopName, laptopBrand, laptopWeight}) {
     <div>{laptopBrand}</div> 
     <div>{laptopWeight}</div>
     </>}
-    <button onClick={() => setShow(show ? false : true)}>{!show ? "Show More" : "Show Less"}</button>
+    <Button variant="contained" onClick={() => setShow(show ? false : true)}>{!show ? "Show More" : "Show Less"}</Button>
     </>
 
   )
